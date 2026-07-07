@@ -1,0 +1,45 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f1ea;
+  color: #2f2a24;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f4f1ea 0%, #e5dccf 100%);
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 2rem;
+}
+
+.hero__content {
+  display: grid;
+  gap: 1rem;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.1;
+}
+
+.hero__description {
+  font-size: 1.125rem;
+}
