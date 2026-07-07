@@ -1,0 +1,15 @@
+* text=auto
+
+# Arquivos binários comuns
+*.ai binary
+*.psd binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary

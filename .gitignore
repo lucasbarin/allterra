@@ -1,0 +1,69 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Artefatos de compactação/extração
+__MACOSX/
+\!ARQUIVOS/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# Dreamweaver
+_notes/
+dwsync.xml
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências (se usar Node futuramente)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Cache
+app/cache/*
+!app/cache/.gitkeep
+app/temp/*
+!app/temp/.gitkeep
+
+# Uploads/Imagens temporárias
+uploads/
+assets/images/temp/
+
+# Arquivos PHP sensíveis
+app/conexao.php
+config.php
+.env
+
+# Arquivos de backup
+*.bak
+*.backup
+*.old
+*.orig
+
+# Arquivos compactados
+*.zip
+*.rar
+*.7z
+*.tar.gz
+
+# Certificados e chaves
+*.pem
+*.key
+*.cert
+
+# Temporários e outros
+*.tmp
+*.temp
+.sass-cache/
