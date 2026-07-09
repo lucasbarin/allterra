@@ -1,206 +1,556 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HTML Reset Master 2025 - Exemplos</title>
-    
+
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Seus CSS customizados -->
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
+
 <body>
 
     <!-- Navbar Exemplo -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-md">
         <div class="container">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="#"><img src="assets/images/svg/logo-branco.svg" alt="Allterra"
+                    class="logotipo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto menu-principal">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#introducao">Introdução</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre</a>
+                        <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicos">Serviços</a>
+                        <a class="nav-link" href="#proposito">Propósito</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
+                        <a class="nav-link" href="#rebranding">Rebranding</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ's</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="section bg-light" id="home">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1 class="text-display mb-3">HTML Reset Master 2025</h1>
-                    <p class="text-lead mb-4">Sistema de reset CSS com tipografia responsiva baseada em REM. Proporcionalidade perfeita em todos os dispositivos.</p>
-                    <button class="btn btn-primary btn-lg me-2">Começar Projeto</button>
-                    <button class="btn btn-outline-secondary btn-lg">Documentação</button>
-                </div>
-                <div class="col-lg-5">
-                    <div class="bg-secondary text-white p-5 text-center" style="height: 400px; display: flex; align-items: center; justify-content: center;">
-                        <p class="mb-0">Área para imagem/ilustração</p>
+    <!-- Sessao banner no desktop deve ter o tamanho completo vertical da tela e max 1920px -->
+    <section id="home" class="home-banner">
+        <div id="banner" class="banner-bg" aria-hidden="true">
+            <div class="icon-banner">
+                <img src="assets/images/svg/icone-banner.svg" alt="" class="icone-banner">
+            </div>
+
+
+        </div>
+        <div class="container banner-conteudo spacer-sessao pb-0">
+            <!-- Conteudo do banner sera inserido aqui com o espacamento padrao do container -->
+
+            <div class="row banner-bottom-row">
+                <div class="offset-md-8 col-md-4">
+                    <div class="d-none d-md-block">
+                        <p class="texto-banner">Regenerar. <br>
+                            Crescer. <br>
+                            Evoluir.</p>
                     </div>
+                    <div class="d-block d-md-none">
+                        <p class="texto-banner">Regenerar.<br>
+                            Crescer.<br>
+                            Evoluir.</p>
+                    </div>
+                    <p><a href=""><img src="assets/images/svg/rolar.svg" alt="" class="d-block ms-auto rolar"> </a></p>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Typography Section -->
-    <section class="section" id="sobre">
-        <div class="container">
-            <h2 class="mb-4">Tipografia Responsiva</h2>
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1>Heading 1 (4.8rem)</h1>
-                    <h2>Heading 2 (3.6rem)</h2>
-                    <h3>Heading 3 (2.8rem)</h3>
-                    <h4>Heading 4 (2.4rem)</h4>
-                    <h5>Heading 5 (2.0rem)</h5>
-                    <h6>Heading 6 (1.8rem)</h6>
-                </div>
-                <div class="col-lg-6">
-                    <p class="text-lead">Texto Lead (2.0rem) - Destaque para introduções e subtítulos importantes.</p>
-                    <p>Parágrafo padrão (1.6rem) - O texto base do site mantém legibilidade ideal em todos os dispositivos. O sistema REM garante proporcionalidade perfeita.</p>
-                    <p class="text-small">Texto pequeno (1.4rem) - Para notas de rodapé e informações secundárias.</p>
-                    <p class="text-tiny">Texto tiny (1.2rem) - Para disclaimers e textos legais.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Buttons Section -->
-    <section class="section bg-light" id="servicos">
-        <div class="container">
-            <h2 class="mb-4">Botões Proporcionais</h2>
-            <div class="row">
-                <div class="col-lg-4 mb-3">
-                    <h4>Tamanhos</h4>
-                    <button class="btn btn-primary btn-lg mb-2">Botão Grande</button><br>
-                    <button class="btn btn-primary mb-2">Botão Normal</button><br>
-                    <button class="btn btn-primary btn-sm mb-2">Botão Pequeno</button>
-                </div>
-                <div class="col-lg-4 mb-3">
-                    <h4>Variações</h4>
-                    <button class="btn btn-primary mb-2">Primary</button><br>
-                    <button class="btn btn-secondary mb-2">Secondary</button><br>
-                    <button class="btn btn-success mb-2">Success</button>
-                </div>
-                <div class="col-lg-4 mb-3">
-                    <h4>Outline</h4>
-                    <button class="btn btn-outline-primary mb-2">Primary</button><br>
-                    <button class="btn btn-outline-secondary mb-2">Secondary</button><br>
-                    <button class="btn btn-outline-success mb-2">Success</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Spacing Section -->
-    <section class="section" id="contato">
-        <div class="container">
-            <h2 class="mb-5">Sistema de Espaçamento</h2>
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="mb-1 p-3 bg-light">Margin Bottom 1 (0.8rem)</div>
-                    <div class="mb-2 p-3 bg-light">Margin Bottom 2 (1.6rem)</div>
-                    <div class="mb-3 p-3 bg-light">Margin Bottom 3 (2.4rem)</div>
-                    <div class="mb-4 p-3 bg-light">Margin Bottom 4 (3.2rem)</div>
-                    <div class="mb-5 p-3 bg-light">Margin Bottom 5 (4.8rem)</div>
-                </div>
-                <div class="col-lg-4">
-                    <h4>Características</h4>
-                    <ul>
-                        <li>Base: <code>html { font-size: 62.5%; }</code></li>
-                        <li>1rem = 10px (navegador padrão)</li>
-                        <li>Respeita preferências do usuário</li>
-                        <li>Proporcionalidade automática</li>
-                        <li>80 media queries (a cada 20px)</li>
-                        <li>Reset mobile em 767px</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Grid Example -->
-    <section class="section bg-light">
-        <div class="container">
-            <h2 class="mb-4">Grid Bootstrap Compatível</h2>
-            <div class="row g-3">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="bg-primary text-white p-4 text-center">
-                        <h4>Card 1</h4>
-                        <p>Conteúdo proporcional</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="bg-secondary text-white p-4 text-center">
-                        <h4>Card 2</h4>
-                        <p>Conteúdo proporcional</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="bg-success text-white p-4 text-center">
-                        <h4>Card 3</h4>
-                        <p>Conteúdo proporcional</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="bg-info text-white p-4 text-center">
-                        <h4>Card 4</h4>
-                        <p>Conteúdo proporcional</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="section bg-dark text-white">
+    <section class="spacer-sessao cor-bege" id="introducao">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
-                    <h4>HTML Reset Master 2025</h4>
-                    <p>Sistema profissional de reset CSS com tipografia responsiva baseada em REM.</p>
-                </div>
-                <div class="col-lg-3">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white-50">Documentação</a></li>
-                        <li><a href="#" class="text-white-50">Exemplos</a></li>
-                        <li><a href="#" class="text-white-50">GitHub</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h5>Contato</h5>
-                    <ul class="list-unstyled">
-                        <li class="text-white-50">contato@exemplo.com</li>
-                        <li class="text-white-50">(11) 9999-9999</li>
-                    </ul>
+                <div class="col-md-12">
+                    <div class="d-none d-md-block">
+                        <h1 class="spacer-bottom-titulo">Reconectar a Agricultura <br> ao Potencial Vivo do Solo.
+                        </h1>
+                        <p>O agronegócio vive sua maior transformação: crescer regenerando<br>é o seu novo paradigma.</p>
+                        <br>
+                        <p>Acreditamos que o solo é o ativo mais poderoso e menos compreendido<br>da agricultura hoje, e que
+                            o futuro da agricultura não será definido apenas<br>pela produtividade, mas principalmente pela
+                            capacidade do agronegócio<br>de se reconectar e ativar o potencial do universo vivo do
+                            solo<br>como catalisador de inovação e geração de valor.</p>
+                        <br>
+                        <p>Na Allterra, abrimos esse caminho e exploramos possibilidades para<br>desbloquear e potencializar
+                            a vida do solo, reconectando a agricultura<br>ao seu potencial vivo e transformando regeneração
+                            em prosperidade<br>para os produtores, o agronegócio e o planeta.</p>
+                        <br>
+                        <p>Essa visão, naturalmente sustentável, é parte fundamental da<br>nossa cultura, guiando nossas
+                            relações, soluções e o impacto<br>para os negócios e para o nosso ecossistema de valor.</p>
+                    </div>
+                    <div class="d-block d-md-none">
+                        <h1 class="spacer-bottom-titulo">Reconectar a Agricultura<br>ao Potencial Vivo do Solo.</h1>
+                        <p>O agronegócio vive sua maior transformação: <br>crescer regenerando é o seu novo paradigma.</p>
+                        <br>
+                        <p>Acreditamos que o solo é o ativo<br>mais poderoso e menos compreendido<br>da agricultura hoje, e que o futuro da <br>agricultura não será definido apenas<br>pela produtividade, mas principalmente<br>pela capacidade do agronegócio<br>de se reconectar e ativar o potencialdo <br>universo vivo do solo como catalisado<br>de inovação e geração de valor.</p>
+                        <br>
+                        <p>Na Allterra, abrimos esse<br>caminho e exploramos possibilidades<br>para desbloquear e potencializar a vida do <br>solo, reconectando a agricultura ao seu <br>potencial vivo e transformando regeneração <br>em prosperidade para os produtores, o <br>agronegócio e o planeta.</p>
+                        <br>
+                        <p>Essa visão, naturalmente sustentável, <br>é parte fundamental da nossa cultura, <br>guiando nossas relações, soluções e o <br>impacto para os negócios e para<br>o nosso ecossistema de valor.</p>
+                    </div>
+
                 </div>
             </div>
-            <hr class="bg-secondary">
-            <div class="text-center text-white-50 text-small">
-                <p class="mb-0">© 2025 - Desenvolvido com sistema de tipografia proporcional</p>
+            <div class="row">
+                <div class="col-md-12"> <img src="assets/images/svg/logo-marrom.svg" alt="alterra" class="logo-introducao">
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
+    <section class="spacer-sessao cor-marrom bg-bege pb-0" id="sobre-nos">
+        <div class="max-1920">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="d-none d-md-block">
+                            <h1 class="spacer-bottom-titulo">Sobre a Allterra</h1>
+                            <p>Somos uma plataforma de inteligência regenerativa. Unimos biociência e soluções <br>
+                                integradas, conectando ideias, tecnologias e negócios, regenerando em rede e
+                                <br>reconectando a
+                                agricultura ao potencial vivo do solo.
+                            </p><br>
+                            <p>
+                                A Allterra é uma empresa do portfólio de fundos geridos pelo Pátria, nascida da<br> fusão
+                                entre a Microgeo e a TMF Fertilizantes, incorporando suas tecnologias<br> regenerativas em
+                                uma visão
+                                integrada e em um portfólio único de soluções.</p>
+                        </div>
+                        <div class="d-block d-md-none">
+                            <h1 class="spacer-bottom-titulo">Sobre a Allterra</h1>
+                            <p>Somos uma plataforma de inteligência <br>regenerativa. Unimos biociência e soluções<br>integradas, conectando ideias, tecnologias<br>e negócios, regenerando em rede e <br>reconectando a agricultura ao<br>potencial vivo do solo.</p>
+                            <br>
+                            <p>A Allterra é uma empresa do portfólio<br>de fundos geridos pelo Pátria, nascida da<br>fusão entre a Microgeo e a TMF Fertilizantes,<br>incorporando suas tecnologias regenerativas<br>em uma visão integrada e em um portfólio<br>único de soluções.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block"> <img src="assets/images/svg/icone-sobre.svg" alt="alterra" class="icone-sobre"> </div>
+        </div>
+
+    </section>
+    <div class="max-1920">
+        <section class="spacer-sessao cor-bege bg-marrom" id="proposito">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Nosso Propósito</h1>
+                        <div class="d-none d-md-block">
+                            <h2>Acelerar a Evolução da Agricultura, <br>
+                                Ativando o Potencial do Solo Vivo.</h2>
+                        </div>
+                        <div class="d-block d-md-none">
+                            <h2>Acelerar a Evolução<br>da Agricultura, Ativando<br>o Potencial do Solo Vivo.</h2>
+                        </div>
+
+                    </div>
+                    <div class="offset-md-6 col-md-6">
+                        <div class="txt-p d-none d-md-block">
+                            <p>Existimos para desbloquear o que o solo <br>
+                                sempre foi capaz de fazer: catalisar evolução, <br>geração de valor e regeneração.
+                                Juntos, estamos <br>impulsionando o futuro de uma agricultura mais <br>inteligente,
+                                próspera e sustentável.
+                            </p>
+                            <br>
+                            <br>
+                            <p>
+                                Este é o nosso compromisso, a razão pela qual <br>existimos e o impacto que queremos
+                                gerar.
+                            </p>
+                        </div>
+                        <div class="txt-p d-block d-md-none">
+                            <p>Existimos para desbloquear o que o<br>solo sempre foi capaz de fazer: catalisar <br>evolução, geração de valor e regeneração.<br>Juntos, estamos impulsionando o futuro <br>de uma agricultura mais inteligente, <br>próspera e sustentável.</p>
+                            <br>
+                            <p>Este é o nosso compromisso,<br>a razão pela qual existimos e o<br>impacto que queremos gerar.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <section id="video" class="spacer-sessao pb-0 sem-100vh">
+        <div class="max-1920">
+            <div class="video-placeholder" id="videoPlaceholder">
+                <img src="assets/images/2x/bg-video@2x-80.jpg" alt="Placeholder do video"
+                    class="video-placeholder__image">
+
+                <button type="button" class="video-placeholder__play" id="videoPlayButton"
+                    aria-label="Reproduzir video">
+                    <img src="assets/images/SVG/play.svg" alt="" aria-hidden="true">
+                </button>
+
+                <video class="video-placeholder__media" id="videoPlayer" controls playsinline preload="metadata">
+                    <source src="assets/videos/video.mp4" type="video/mp4">
+                    Seu navegador nao suporta a reproducao de videos.
+                </video>
+            </div>
+        </div>
+
+    </section>
+    <div class="bg-marrom-claro">
+        <section id="principios" class="spacer-sessao cor-bege pb-0">
+            <div class="max-1920">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h1 class="spacer-bottom-titulo">Nossos Principios</h1>
+                        </div>
+                        <div class="col-md-6 offset-md-2" id="conteudo-principios">
+                            <div class="d-none d-md-block">
+                                <p><strong>Cinco princípios orientam como <br> pensamos e agimos todos os dias.</strong></p>
+
+                                <h3>Revelar o invisível.</h3>
+                                <p class="txt-p">Transformamos o solo vivo em <br> catalisador de inovação e valor.</p>
+
+                                <h3>Integrar para evoluir.</h3>
+                                <p class="txt-p">Inteligência do solo, biociência e <br> tecnologia em sinergia natural.</p>
+
+                                <h3>Comprovar e encantar.</h3>
+                                <p class="txt-p">Provar com ciência, vender com <br> paixão, gerar resultados tangíveis.</p>
+
+                                <h3>Evoluir pela colaboração.</h3>
+                                <p class="txt-p">Crescemos em rede, conectados <br> por propósito, acelerando a evolução.
+                                </p>
+
+                                <h3>Naturalmente sustentável.</h3>
+                                <p class="txt-p">Está em nossa essência, permeia <br> relações, soluções e impacto.</p>
+                            </div>
+                            <div class="d-block d-md-none">
+                                <p><strong>Cinco princípios orientam como<br>pensamos e agimos todos os dias.</strong></p>
+
+                                <h3>Revelar o invisível.</h3>
+                                <p class="txt-p">Transformamos o solo vivo em <br> catalisador de inovação e valor.</p>
+
+                                <h3>Integrar para evoluir.</h3>
+                                <p class="txt-p">Inteligência do solo, biociência e<br>  tecnologia em sinergia natural.</p>
+
+                                <h3>Comprovar e encantar.</h3>
+                                <p class="txt-p">Provar com ciência, vender com<br>  paixão, gerar resultados tangíveis.</p>
+
+                                <h3>Evoluir pela colaboração.</h3>
+                                <p class="txt-p">Crescemos em rede, conectados<br>  por propósito, acelerando a evolução.</p>
+
+                                <h3>Naturalmente sustentável.</h3>
+                                <p class="txt-p">Está em nossa essência, permeia<br>  relações, soluções e impacto.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="spacer-sessao cor-marrom bg-cinza" id="rebranding">
+        <div class="max-1920">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-none d-md-block">
+                            <h1>Rebranding: <br>Nossa <br>
+Expressão<br>
+de Marca </h1>
+                        </div>
+                        <div class="d-block d-md-none">
+                            <h1>Rebranding:<br>Nossa Expressão<br>de Marca</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 offset-md-2 txt-p" id="conteudo-rebranding">
+                        <div class="d-none d-md-block">
+                            <p>A Allterra evoluiu. Uma nova ambição exigiu uma nova <br> expressão, capaz de comunicar
+                                quem nos tornamos <br> e o que pretendemos liderar.
+
+                            </p><br>
+                            <p>Não apenas uma mudança estética, mas a expressão visual<br>
+                                de uma mudança de postura e do compromisso de acelerar a <br>transformação da
+                                agricultura, não apenas acompanhá-la.
+                            </p><br>
+                            <p>
+                                Nossa nova identidade parte de uma convicção simples: <br>
+                                se o Solo Vivo é o ativo mais poderoso e ainda pouco <br>compreendido da agricultura hoje, a
+                                marca Allterra <br>
+                                precisa carregar essa mesma profundidade, vida<br>
+                                e capacidade de revelar o potencial que não se vê.
+                            </p>
+                        </div>
+                        <div class="d-block d-md-none">
+                            <p>A Allterra evoluiu. Uma nova ambição<br>exigiu uma nova expressão, capaz de <br>comunicar quem nos tornamos<br>e o que pretendemos liderar.</p>
+                            <br>
+                            <p>Não apenas uma mudança estética,<br>mas a expressão visual de uma mudança<br>de postura e do compromisso de acelerar a <br>transformação da agricultura, não apenas <br>acompanhá-la.</p>
+                            <br>
+                            <p>Nossa nova identidade parte de uma <br>convicção simples: se o Solo Vivo é o ativo <br>mais poderoso e ainda pouco compreendido <br>da agricultura hoje, a marca Allterra precisa <br>carregar essa mesma profundidade, vida<br>e capacidade de revelar o potencial<br>que não se vê.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="d-none d-md-block"> <img src="assets/images/2x/rebrand@2x.png" class="img-fluid"
+                    alt="Rebranding: Look & Feel"> </div>
+            <div class="d-block d-md-none rebranding-galeria-mobile">
+                <img src="assets/images/rebranding/01.png" class="img-fluid" alt="Rebranding 01">
+                <img src="assets/images/rebranding/02.png" class="img-fluid" alt="Rebranding 02">
+                <img src="assets/images/rebranding/03.png" class="img-fluid" alt="Rebranding 03">
+                <img src="assets/images/rebranding/04.png" class="img-fluid" alt="Rebranding 04">
+                <img src="assets/images/rebranding/05.png" class="img-fluid" alt="Rebranding 05">
+                <img src="assets/images/rebranding/06.png" class="img-fluid" alt="Rebranding 06">
+                <img src="assets/images/rebranding/07.png" class="img-fluid" alt="Rebranding 07">
+            </div>
+        </div>
+    </section>
+    <span id="faq"></span>
+    <div id="bg-final">
+        <div class="max-1920">
+            <section id="sessao-faq" class="spacer-sessao pb-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-md-lg-4">
+                            <h1 class="spacer-bottom-titulo">Perguntas <br> Frequentes</h1>
+                        </div>
+
+                        <div class="col-md-12 col-md-lg-8">
+                            <div class="faq-accordion">
+                                <div class="faq-item" data-delay="100">
+                                    <div class="faq-question">
+                                        <h5>O que é a Allterra e qual é a relação entre <br> Microgeo e TMF
+                                            Fertilizantes?</h5>
+                                        <button type="button" class="faq-toggle" aria-label="Toggle resposta"
+                                            aria-expanded="false">
+                                            <span class="faq-icon" aria-hidden="true">
+                                                <span class="faq-line faq-line-horizontal"></span>
+                                                <span class="faq-line faq-line-vertical"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p class="txt-pp">Allterra é uma empresa do portfólio de fundos geridos pelo
+                                            Pátria, que nasceu da fusão entre a Microgeo e a TMF Fertilizantes,
+                                            incorporando suas tecnologias regenerativas a uma visão e a um portfólio
+                                            únicos de soluções integradas. Allterra opera como uma plataforma de
+                                            inteligência regenerativa, unindo biociência, tecnologia e colaboração para
+                                            reconectar a agricultura ao potencial vivo do solo.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item" data-delay="200">
+                                    <div class="faq-question">
+                                        <h5>Por que a Allterra está lançando <br> uma nova estratégia agora?</h5>
+                                        <button type="button" class="faq-toggle" aria-label="Toggle resposta"
+                                            aria-expanded="false">
+                                            <span class="faq-icon" aria-hidden="true">
+                                                <span class="faq-line faq-line-horizontal"></span>
+                                                <span class="faq-line faq-line-vertical"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p class="txt-pp">Porque o agro está se transformando e a Allterra quer liderar
+                                            essa mudança, não apenas acompanhá-la.<br><br>A nova estratégia formaliza
+                                            nossa ambição e o nosso compromisso com o futuro de uma agricultura mais
+                                            inteligente e próspera. A fusão entre Microgeo e TMF Fertilizantes criou uma
+                                            plataforma com escala, profundidade científica e um portfólio de tecnologias
+                                            integradas.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item" data-delay="300">
+                                    <div class="faq-question">
+                                        <h5>Por que o foco em Solo Vivo?</h5>
+                                        <button type="button" class="faq-toggle" aria-label="Toggle resposta"
+                                            aria-expanded="false">
+                                            <span class="faq-icon" aria-hidden="true">
+                                                <span class="faq-line faq-line-horizontal"></span>
+                                                <span class="faq-line faq-line-vertical"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p class="txt-pp">Está na forma como entendemos e ativamos o solo, não como um
+                                            insumo de resultados imediatos, mas como um ecossistema vivo a ser
+                                            decodificado, potencializado e monetizado. É a base da nossa inteligência
+                                            regenerativa e o ponto de partida de todas as nossas soluções e relações.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item" data-delay="400">
+                                    <div class="faq-question">
+                                        <h5>O que é inteligência regenerativa?</h5>
+                                        <button type="button" class="faq-toggle" aria-label="Toggle resposta"
+                                            aria-expanded="false">
+                                            <span class="faq-icon" aria-hidden="true">
+                                                <span class="faq-line faq-line-horizontal"></span>
+                                                <span class="faq-line faq-line-vertical"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p class="txt-pp">É a capacidade de decodificar o potencial vivo do solo e
+                                            transformá-lo em valor real. A combinação de análise profunda, dados reais,
+                                            biociência aplicada e tecnologia integrada, operando em sinergia, em um
+                                            ciclo completo de diagnóstico, prescrição, implementação, monitoramento e
+                                            monetização.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item" data-delay="500">
+                                    <div class="faq-question">
+                                        <h5>O que muda na prática <br class="d-none d-md-block"> para produtores?</h5>
+                                        <button type="button" class="faq-toggle" aria-label="Toggle resposta"
+                                            aria-expanded="false">
+                                            <span class="faq-icon" aria-hidden="true">
+                                                <span class="faq-line faq-line-horizontal"></span>
+                                                <span class="faq-line faq-line-vertical"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p class="txt-pp">Produtores passam a ter acesso a uma plataforma integrada, do
+                                            diagnóstico profundo do solo à geração de valor: créditos ambientais,
+                                            certificações premium e acesso a mercados estratégicos. Não soluções
+                                            isoladas. Um ecossistema completo que comprova com ciência e gera resultados
+                                            tangíveis.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item" data-delay="600">
+                                    <div class="faq-question">
+                                        <h5>O que muda para parceiros <br> e investidores?</h5>
+                                        <button type="button" class="faq-toggle" aria-label="Toggle resposta"
+                                            aria-expanded="false">
+                                            <span class="faq-icon" aria-hidden="true">
+                                                <span class="faq-line faq-line-horizontal"></span>
+                                                <span class="faq-line faq-line-vertical"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p class="txt-pp">Parceiros prosperam em um ecossistema vivo de inovação
+                                            compartilhada, onde cada solução potencializa a próxima. Investidores têm
+                                            acesso a uma plataforma com um modelo de crescimento claro, inteligência
+                                            proprietária, soluções integradas, colaboração estratégica e aquisições
+                                            focadas em solo, gerando valor com transparência e impacto mensurável.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item" data-delay="700">
+                                    <div class="faq-question">
+                                        <h5>A Allterra é uma empresa de <br> sustentabilidade?</h5>
+                                        <button type="button" class="faq-toggle" aria-label="Toggle resposta"
+                                            aria-expanded="false">
+                                            <span class="faq-icon" aria-hidden="true">
+                                                <span class="faq-line faq-line-horizontal"></span>
+                                                <span class="faq-line faq-line-vertical"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p class="txt-pp">Na Allterra, sustentabilidade é consequência natural do que
+                                            fazemos e como atuamos, não uma bandeira.<br><br>Quando você ativa o
+                                            potencial vivo do solo, produtividade e regeneração se reforçam mutuamente.
+                                            É o que chamamos de naturalmente sustentável: está na nossa essência,
+                                            permeia relações, soluções e impacto.</p>
+                                    </div>
+                                </div>
+
+                                <div class="faq-item" data-delay="800">
+                                    <div class="faq-question">
+                                        <h5>Qual é a ambição da Allterra para os <br> próximos anos?</h5>
+                                        <button type="button" class="faq-toggle" aria-label="Toggle resposta"
+                                            aria-expanded="false">
+                                            <span class="faq-icon" aria-hidden="true">
+                                                <span class="faq-line faq-line-horizontal"></span>
+                                                <span class="faq-line faq-line-vertical"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <div class="faq-answer">
+                                        <p class="txt-pp">Reconectar a agricultura ao potencial vivo do solo para ser
+                                            autoridade em inteligência regenerativa. Liderar e fortalecer a categoria
+                                            Solo Vivo como novo código da agricultura moderna. Tornar-se a principal
+                                            plataforma de inteligência regenerativa da América Latina, crescendo em
+                                            rede, por colaboração estratégica e aquisições focadas em solo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer id="footer" class="spacer-sessao pt-0 pb-0">
+                <div class="container">
+                    <div class="row align-items-end">
+                        <div class="col-md-12 text-end">
+                            <a href="#home" class="bt-voltar-wrap">
+                                <img src="assets/images/SVG/voltar.svg" alt="Voltar" class="bt-voltar">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row footer-logos align-items-end">
+                        <div class="offset-md-4 col-md-4">
+                            <div class="footer-contato"> 
+                            <p><strong>Contato</strong></p>
+                            <br>
+                            <p><a href="mailto:contato@allterraagro.com"><strong>contato@allterraagro.com</strong></a></p>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="redes-sociais footer-redes">
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                                    <img src="assets/images/SVG/icone-face.svg" alt="Facebook" class="icone-social">
+                                </a>
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                                    <img src="assets/images/SVG/icone-insta.svg" alt="Instagram" class="icone-social">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-12 align-items-end text-end">
+                            <img src="assets/images/SVG/logo-footer.svg" alt="Allterra" class="logotipo-footer ms-auto">
+                        </div>
+                    </div>
+                    
+                    <div class="row footer-bottom align-items-end">
+                        <div class="col-md-12 text-end">
+                            <p class="copy">© 2026 Allterra - Todos os direitos reservados.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <div class="orientation-lock" role="alert" aria-live="assertive" aria-label="Aviso de orientação">
+        <div class="orientation-lock__card">
+        <h2 class="orientation-lock__title">Modo retrato</h2>
+            <p class="orientation-lock__text">Para visualizar este site, gire o celular para a posição vertical.</p>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>

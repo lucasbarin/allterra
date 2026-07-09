@@ -1,0 +1,132 @@
+/* Teste isolado do loader Allterra */
+.loading-teste-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+}
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background-color: rgba(81, 48, 46, 0.94);
+  pointer-events: all;
+}
+
+.loading-icone {
+  width: clamp(10rem, 24vw, 18rem);
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.loading-icone-grupo {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: loading-saida 4.5s linear infinite;
+}
+
+.loading-icone-seta,
+.loading-icone-traco {
+  fill: var(--cor-marrom-claro);
+  transform-box: fill-box;
+  will-change: transform, opacity;
+}
+
+.loading-icone-seta {
+  transform-origin: 52% 56%;
+  animation: loading-entrada-seta 4.5s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+
+.loading-icone-traco {
+  transform-origin: 48% 52%;
+  animation: loading-entrada-traco 4.5s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+
+@keyframes loading-entrada-seta {
+  0% {
+    opacity: 0;
+    transform: translate(-0.9rem, 0.9rem) scale(0.84);
+  }
+
+  22.22% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  88.89% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-0.4rem, 0.4rem) scale(0.9);
+  }
+}
+
+@keyframes loading-entrada-traco {
+  0% {
+    opacity: 0;
+    transform: translate(-1.4rem, 1.2rem) scale(0.8);
+  }
+
+  22.22% {
+    opacity: 0;
+    transform: translate(-1.1rem, 0.9rem) scale(0.84);
+  }
+
+  44.44% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  88.89% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-0.5rem, 0.5rem) scale(0.9);
+  }
+}
+
+@keyframes loading-saida {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  88.89% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 767px) {
+  .loading-overlay {
+    background-color: rgba(81, 48, 46, 0.96);
+  }
+
+  .loading-icone {
+    width: clamp(9rem, 34vw, 14rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-icone-grupo,
+  .loading-icone-seta,
+  .loading-icone-traco {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

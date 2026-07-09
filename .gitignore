@@ -6,6 +6,7 @@ desktop.ini
 # Artefatos de compactação/extração
 __MACOSX/
 \!ARQUIVOS/
+\!referencia/
 
 # Editores
 .vscode/
