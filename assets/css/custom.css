@@ -105,6 +105,18 @@ bold {
   margin-top: 12rem;
   width: 13.5rem;
   height: 3.5rem;
+  animation: scroll-hint-loop 5s ease-in-out infinite;
+}
+
+@keyframes scroll-hint-loop {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.6rem);
+  }
 }
 
 /* ========================================
@@ -421,6 +433,16 @@ bold {
   display: flex;
   justify-content: flex-end;
   gap: 4rem;
+}
+
+#footer .footer-redes a img {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+#footer .footer-redes a:hover img,
+#footer .footer-redes a:focus-visible img {
+  transform: scale(1.06);
+  filter: brightness(1.08);
 }
 
 .footer-bottom {
@@ -898,6 +920,10 @@ h3 {
   .faq-line {
     width: 3rem;
     height: 0.3rem;
+  }
+
+  .faq-question h5 br {
+    display: none;
   }
 
   .rolar {
