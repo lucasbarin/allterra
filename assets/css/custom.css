@@ -37,6 +37,10 @@ section {
   min-height: 100svh;
 }
 
+#abertura-intro {
+  min-height: 900px;
+}
+
 /* Use em sections que nao devem ocupar a altura minima da tela. */
 .sem-100vh {
   min-height: auto;
@@ -51,7 +55,6 @@ a,
 a:visited {
   text-decoration: none;
 }
-
 
 strong,
 bold {
@@ -92,6 +95,20 @@ bold {
   width: 42.6rem;
   height: 8.3rem;
 }
+
+
+.logotipo-abertura {
+  width: 55.7rem;
+  height: 10.9rem;
+}
+
+@media (min-width: 768px) {
+  .abertura-logo-wrap {
+    justify-content: flex-end;
+  }
+}
+
+
 
 .logo-introducao {
   width: 172rem;
@@ -240,7 +257,6 @@ bold {
   object-fit: contain;
 }
 
-
 .icone-sobre {
   display: block;
   width: 36rem;
@@ -255,7 +271,6 @@ bold {
   background-position: left bottom;
   background-size: 95rem 95rem;
 }
-
 
 #proposito .txt-p {
   margin-top: 21rem;
@@ -277,7 +292,6 @@ bold {
   padding-bottom: 0rem;
 }
 
-
 #conteudo-principios {
   margin-bottom: 36rem;
 }
@@ -290,7 +304,6 @@ bold {
 #bg-final {
   background-color: var(--cor-super-claro);
   color: var(--cor-marrom);
-
 }
 
 #bg-final .max-1920 {
@@ -364,7 +377,9 @@ bold {
   background-color: var(--cor-marrom);
   border-radius: 999px;
   transform: translate(-50%, -50%);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .faq-line-vertical {
@@ -375,7 +390,9 @@ bold {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.35s ease;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.35s ease;
 }
 
 .faq-answer .txt-pp {
@@ -426,7 +443,6 @@ bold {
   height: 8.3rem;
   display: block;
   margin-top: 25rem;
-
 }
 
 .footer-redes {
@@ -436,7 +452,9 @@ bold {
 }
 
 #footer .footer-redes a img {
-  transition: transform 0.25s ease, filter 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
 }
 
 #footer .footer-redes a:hover img,
@@ -463,6 +481,82 @@ bold {
 
 .banner-conteudo .banner-bottom-row {
   margin-top: auto;
+}
+
+/* ========================================
+   ABERTURA INTRO - DESKTOP
+   ======================================== */
+#abertura-intro {
+  background-image: url("../images/SVG/icone-banner.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 94.8rem 94.8rem;
+}
+
+#abertura-intro .abertura-grid {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+#abertura-intro .abertura-links-col {
+  margin-top: 0;
+}
+
+#abertura-intro .abertura-logo-col {
+  margin-top: auto;
+}
+
+#abertura-intro .abertura-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+#abertura-intro .abertura-links a {
+  color: var(--cor-bege) !important;
+  position: relative;
+  display: inline-block;
+  padding: 0;
+}
+
+#abertura-intro .abertura-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.6rem;
+  width: 0;
+  height: 0.2rem;
+  background-color: currentColor;
+  transition: width 0.25s ease;
+}
+
+#abertura-intro .abertura-links a:hover::after,
+#abertura-intro .abertura-links a:focus-visible::after {
+  width: 100%;
+}
+
+#abertura-intro .abertura-logo-wrap {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media (min-width: 768px) {
+  #abertura-intro .abertura-links-col {
+    margin-top: auto;
+    padding-bottom: 25.4rem;
+  }
+
+  #abertura-intro .abertura-logo-col {
+    margin-top: auto;
+    padding-bottom: 16rem;
+  }
+}
+
+.logotipo-abertura {
+  display: block;
 }
 
 /* ========================================
@@ -656,7 +750,9 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.35s ease, opacity 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
 }
 
 .video-placeholder__play img {
@@ -685,9 +781,10 @@ h3 {
   pointer-events: auto;
 }
 
-
 @media (max-width: 767px) {
-
+  /* ===========================
+     NAVBAR E MENU - MOBILE
+     =========================== */
   .navbar {
     position: absolute;
     top: 0;
@@ -736,7 +833,10 @@ h3 {
     height: 0.3rem;
     background-color: var(--cor-bege);
     transform-origin: center;
-    transition: top 0.25s ease, transform 0.25s ease, background-color 0.25s ease;
+    transition:
+      top 0.25s ease,
+      transform 0.25s ease,
+      background-color 0.25s ease;
   }
 
   .navbar-toggler-icon::before {
@@ -782,7 +882,9 @@ h3 {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
   }
 
   .navbar-collapse.collapsing {
@@ -814,6 +916,9 @@ h3 {
     margin-right: 0;
   }
 
+  /* ===========================
+     TIPOGRAFIA - MOBILE
+     =========================== */
   body {
     font-size: 3rem;
     line-height: 3.6rem;
@@ -878,7 +983,7 @@ h3 {
 
   .intro {
     font-size: 4.2rem;
-    line-height: 11rem;
+    line-height: 7rem;
   }
 
   .copy {
@@ -886,6 +991,9 @@ h3 {
     line-height: 2.1rem;
   }
 
+  /* ===========================
+     ESCALAS E ESPACAMENTOS - MOBILE
+     =========================== */
   .logotipo {
     width: 35.3rem;
     height: 6.9rem;
@@ -911,6 +1019,9 @@ h3 {
     padding-right: 4.5rem;
   }
 
+  /* ===========================
+     FAQ E CONTROLES - MOBILE
+     =========================== */
   .faq-toggle,
   .faq-icon {
     width: 3rem;
@@ -938,13 +1049,16 @@ h3 {
     height: 4.3rem;
   }
 
+  /* ===========================
+     BANNER HOME - MOBILE
+     =========================== */
   body.menu-open {
     overflow: hidden;
   }
 
   .icone-banner {
-  display: none;
-}
+    display: none;
+  }
 
   .banner-bg {
     background-image: url("../images/2x/banner-mobile@2x-80.jpg");
@@ -952,19 +1066,49 @@ h3 {
     background-position: center top;
   }
 
-#proposito .txt-p {
+  #abertura-intro {
+    min-height: 136rem;
+    background-size: 36.1rem 36.1rem;
+  }
+
+  #abertura-intro .abertura-logo-col {
+    order: 1;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #abertura-intro .abertura-logo-wrap {
+    justify-content: flex-end;
+    transform: translateY(16rem);
+  }
+
+  #abertura-intro .logotipo-abertura {
+    width: 35.5rem;
+    height: 6.94rem;
+  }
+
+  #abertura-intro .abertura-links-col {
+    order: 2;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  /* ===========================
+     BLOCOS DE TEXTO - MOBILE
+     =========================== */
+  #proposito .txt-p {
     margin-top: 21rem;
     margin-left: 0rem;
     margin-bottom: 10rem;
-}
+  }
 
-.icone-sobre {
+  .icone-sobre {
     display: block;
     width: 19rem;
     height: 19rem;
     margin-top: 9rem;
     margin-bottom: -0.5rem;
-}
+  }
 
   /* Controla o ritmo vertical dos blocos mobile sem afetar as quebras inline. */
   #introducao .d-block.d-md-none > br,
@@ -994,6 +1138,9 @@ h3 {
     margin-bottom: 4.8rem;
   }
 
+  /* ===========================
+     INTRODUCAO - MOBILE
+     =========================== */
   #introducao .container {
     display: flex;
     flex-direction: column;
@@ -1010,6 +1157,9 @@ h3 {
     margin-bottom: 0;
   }
 
+  /* ===========================
+     SOBRE NOS - MOBILE
+     =========================== */
   #sobre-nos {
     display: flex;
     flex-direction: column;
@@ -1042,6 +1192,9 @@ h3 {
     margin-left: 0;
   }
 
+  /* ===========================
+     PROPOSITO - MOBILE
+     =========================== */
   #proposito h2 {
     margin-top: 8.5rem;
     margin-bottom: 13rem;
@@ -1057,6 +1210,9 @@ h3 {
     text-align: left;
   }
 
+  /* ===========================
+     PRINCIPIOS - MOBILE
+     =========================== */
   #principios strong {
     margin-top: 1.6rem;
     margin-bottom: 2.2rem;
@@ -1084,6 +1240,9 @@ h3 {
     margin-bottom: 5rem;
   }
 
+  /* ===========================
+     REBRANDING - MOBILE
+     =========================== */
   #rebranding .d-block.d-md-none h1 {
     margin-bottom: 5.6rem;
   }
@@ -1097,6 +1256,9 @@ h3 {
     margin-bottom: 18rem;
   }
 
+  /* ===========================
+     FINAL / FOOTER - MOBILE
+     =========================== */
   #bg-final .max-1920 {
     min-height: 100vh;
     min-height: 100svh;
@@ -1141,7 +1303,6 @@ h3 {
   #rebranding .rebranding-galeria-mobile img + img {
     margin-top: 4.5rem;
   }
-
 }
 
 .orientation-lock {

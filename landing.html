@@ -9,6 +9,7 @@
         content="A Allterra reconecta a agricultura ao potencial vivo do solo com inteligência regenerativa, biociência e soluções integradas.">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#51302e">
+    <link rel="canonical" href="https://allterraagro.com.br/landing.html">
 
     <link rel="icon" type="image/png" href="assets/images/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
@@ -19,18 +20,19 @@
 
     <meta property="og:locale" content="pt_BR">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://allterraagro.com.br/landing.html">
     <meta property="og:site_name" content="Allterra">
     <meta property="og:title" content="Allterra | Inteligência Regenerativa">
     <meta property="og:description"
         content="A Allterra reconecta a agricultura ao potencial vivo do solo com inteligência regenerativa, biociência e soluções integradas.">
-    <meta property="og:image" content="assets/images/2x/img-bg-banner@2x-80.jpg">
+    <meta property="og:image" content="https://allterraagro.com.br/assets/images/2x/img-social.jpg">
     <meta property="og:image:alt" content="Allterra - Inteligência regenerativa para ativar o potencial vivo do solo.">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Allterra | Inteligência Regenerativa">
     <meta name="twitter:description"
         content="A Allterra reconecta a agricultura ao potencial vivo do solo com inteligência regenerativa, biociência e soluções integradas.">
-    <meta name="twitter:image" content="assets/images/2x/img-bg-banner@2x-80.jpg">
+    <meta name="twitter:image" content="https://allterraagro.com.br/assets/images/2x/img-social.jpg">
     <meta name="twitter:image:alt" content="Allterra - Inteligência regenerativa para ativar o potencial vivo do solo.">
 
     <!-- Bootstrap 5 -->
@@ -40,9 +42,22 @@
     <!-- Seus CSS customizados -->
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/loading-teste.css">
 </head>
 
 <body>
+
+    <div class="loading-overlay" data-loader-overlay aria-live="polite" aria-hidden="false">
+        <svg class="loading-icone" viewBox="0 0 244.9 244.9" role="img" aria-label="Carregando"
+            xmlns="http://www.w3.org/2000/svg">
+            <g class="loading-icone-grupo">
+                <path class="loading-icone-traco"
+                    d="M244.9,244.9h-43.8v-120c0-44.7-36.3-81-81-81H0V0h120c68.8,0,124.9,56,124.9,124.9v120Z" />
+                <path class="loading-icone-seta"
+                    d="M118.5,72.9H0v43.8h103.5,0C50.4,138.4,11.7,188,.1,244.7l46.6.2c10.6-42.6,42-78,81.3-94.6h0s0,94.6,0,94.6h43.8v-118.5c0-29.5-24-53.5-53.5-53.5Z" />
+            </g>
+        </svg>
+    </div>
 
     <!-- Navbar Exemplo -->
     <nav class="navbar navbar-expand-md">
@@ -579,6 +594,7 @@ de Marca </h1>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/loading-teste.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

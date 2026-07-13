@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	var autoScrollInProgress = false;
 	var snapScrollTimer = null;
 	var scrollEndUnlockTimer = null;
+	var openingSequenceStarted = false;
 
 	function getHashFromLink(link) {
 		if (!link) {
@@ -266,6 +267,15 @@ document.addEventListener("DOMContentLoaded", function () {
 		}, 80);
 	}
 
+	function startInitialHeroSequence() {
+		if (openingSequenceStarted) {
+			return;
+		}
+
+		openingSequenceStarted = true;
+		runInitialHeroSequence();
+	}
+
 	function isMobileMenuViewport() {
 		return window.matchMedia("(max-width: 767px)").matches;
 	}
@@ -370,7 +380,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	setupAosTargetsAndInit();
-	runInitialHeroSequence();
+	if (document.querySelector("[data-loader-overlay]")) {
+		document.addEventListener("allterra-loading-hidden", startInitialHeroSequence, {
+			once: true,
+		});
+	} else {
+		startInitialHeroSequence();
+	}
 	updateActiveMenuLinkOnScroll();
 
 	if (videoContainer && playButton && videoPlayer) {
