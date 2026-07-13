@@ -11,8 +11,14 @@
   z-index: 9999;
   display: grid;
   place-items: center;
-  background-color: rgba(81, 48, 46, 0.94);
+  background-color: rgba(81, 48, 46, 0.985);
   pointer-events: all;
+  opacity: 1;
+  transition: opacity 0.55s ease;
+}
+
+.loading-overlay.is-hiding {
+  opacity: 0;
 }
 
 .loading-icone {
@@ -113,7 +119,7 @@
 
 @media (max-width: 767px) {
   .loading-overlay {
-    background-color: rgba(81, 48, 46, 0.96);
+    background-color: rgba(81, 48, 46, 0.99);
   }
 
   .loading-icone {

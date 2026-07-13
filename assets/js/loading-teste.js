@@ -17,16 +17,41 @@
   }
 
   function showLoading() {
+    overlay.classList.remove("is-hiding");
     overlay.hidden = false;
     overlay.setAttribute("aria-hidden", "false");
     lockPageScroll(true);
   }
 
   function hideLoading() {
-    overlay.hidden = true;
-    overlay.setAttribute("aria-hidden", "true");
-    lockPageScroll(false);
-    document.dispatchEvent(new CustomEvent("allterra-loading-hidden"));
+    if (overlay.hidden || overlay.classList.contains("is-hiding")) {
+      return;
+    }
+
+    function finalizeHide() {
+      overlay.hidden = true;
+      overlay.classList.remove("is-hiding");
+      overlay.setAttribute("aria-hidden", "true");
+      lockPageScroll(false);
+      document.dispatchEvent(new CustomEvent("allterra-loading-hidden"));
+    }
+
+    overlay.classList.add("is-hiding");
+
+    var fallbackTimer = setTimeout(finalizeHide, 650);
+    overlay.addEventListener(
+      "transitionend",
+      function onFadeEnd(event) {
+        if (event.propertyName !== "opacity") {
+          return;
+        }
+
+        clearTimeout(fallbackTimer);
+        overlay.removeEventListener("transitionend", onFadeEnd);
+        finalizeHide();
+      },
+      { once: true }
+    );
   }
 
   function toggleLoading(forceState) {

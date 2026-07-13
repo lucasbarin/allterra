@@ -198,6 +198,15 @@ bold {
   margin-right: 0;
 }
 
+.landing-page.pre-hero-hidden .navbar .navbar-brand,
+.landing-page.pre-hero-hidden .navbar .menu-principal .nav-link,
+.landing-page.pre-hero-hidden #home .texto-banner,
+.landing-page.pre-hero-hidden #home .rolar {
+  opacity: 0 !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .navbar .nav-link::after {
   content: "";
   position: absolute;
@@ -242,12 +251,43 @@ bold {
   z-index: 0;
 }
 
+.landing-page .home-video-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 0;
+}
+
+.landing-page .banner-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.landing-page #home.video-ready .home-video-background {
+  opacity: 1;
+}
+
+.landing-page #home.video-fallback .home-video-background {
+  opacity: 0;
+}
+
 .icon-banner {
   position: absolute;
   left: 0;
   bottom: 0;
   width: 65.9rem;
   height: 65.9rem;
+  z-index: 2;
 }
 
 .icone-banner {
@@ -266,7 +306,7 @@ bold {
 }
 
 #proposito {
-  background-image: url("../images/svg/icone-proposito.svg");
+  background-image: url("../images/SVG/icone-proposito.svg");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 95rem 95rem;
@@ -285,7 +325,7 @@ bold {
 }
 
 #principios .container {
-  background-image: url("../images/svg/icone-marrom.svg");
+  background-image: url("../images/SVG/icone-marrom.svg");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 66.1rem 66.7rem;

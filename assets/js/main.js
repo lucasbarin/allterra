@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	var videoContainer = document.getElementById("videoPlaceholder");
 	var playButton = document.getElementById("videoPlayButton");
 	var videoPlayer = document.getElementById("videoPlayer");
+	var homeSection = document.getElementById("home");
+	var homeVideoBanner = document.getElementById("homeVideoBanner");
+	var homeVideoSource = homeVideoBanner ? homeVideoBanner.querySelector("source") : null;
+	var homeVideoResizeTimer = null;
+	var currentHomeVideoSrc = "";
 	var scrollButtonLink = document.querySelector("a[href='#introducao'] .rolar")
 		? document.querySelector("a[href='#introducao'] .rolar").closest("a")
 		: null;
@@ -17,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	var snapScrollTimer = null;
 	var scrollEndUnlockTimer = null;
 	var openingSequenceStarted = false;
+	var entranceAnimationsStarted = false;
 
 	function getHashFromLink(link) {
 		if (!link) {
@@ -245,6 +251,52 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 
 		if (!sequence.length) {
+			document.body.classList.remove("pre-hero-hidden");
+			return;
+		}
+
+		sequence.forEach(function (element) {
+			element.style.opacity = "0";
+			element.style.transform = "translateY(1.2rem)";
+			element.style.willChange = "opacity, transform";
+		});
+
+		document.body.classList.remove("pre-hero-hidden");
+
+		setTimeout(function () {
+			sequence.forEach(function (element, index) {
+				setTimeout(function () {
+					element.style.transition = "opacity 0.55s ease, transform 0.55s ease";
+					element.style.opacity = "1";
+					element.style.transform = "translateY(0)";
+				}, index * 90);
+			});
+
+			document.body.dataset.heroSequenceDone = "true";
+		}, 80);
+	}
+
+	function runIndexOpeningSequence() {
+		if (document.body.dataset.indexOpeningSequenceDone === "true") {
+			return;
+		}
+
+		var openingSection = document.getElementById("abertura-intro");
+		if (!openingSection) {
+			return;
+		}
+
+		var sequence = Array.prototype.slice.call(
+			openingSection.querySelectorAll(".abertura-links a")
+		);
+		var openingLogo = openingSection.querySelector(".logotipo-abertura");
+
+		if (openingLogo) {
+			sequence.push(openingLogo);
+		}
+
+		if (!sequence.length) {
+			document.body.dataset.indexOpeningSequenceDone = "true";
 			return;
 		}
 
@@ -260,10 +312,10 @@ document.addEventListener("DOMContentLoaded", function () {
 					element.style.transition = "opacity 0.55s ease, transform 0.55s ease";
 					element.style.opacity = "1";
 					element.style.transform = "translateY(0)";
-				}, index * 90);
+				}, index * 120);
 			});
 
-			document.body.dataset.heroSequenceDone = "true";
+			document.body.dataset.indexOpeningSequenceDone = "true";
 		}, 80);
 	}
 
@@ -276,12 +328,61 @@ document.addEventListener("DOMContentLoaded", function () {
 		runInitialHeroSequence();
 	}
 
+	function startEntranceAnimations() {
+		if (entranceAnimationsStarted) {
+			return;
+		}
+
+		entranceAnimationsStarted = true;
+		setupAosTargetsAndInit();
+		runIndexOpeningSequence();
+		startInitialHeroSequence();
+	}
+
 	function isMobileMenuViewport() {
 		return window.matchMedia("(max-width: 767px)").matches;
 	}
 
 	function setMenuOpenState(isOpen) {
 		document.body.classList.toggle("menu-open", isOpen);
+	}
+
+	function getHomeVideoConfig() {
+		var isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+		return {
+			src: isDesktop
+				? "assets/videos/banner-horizontal-720.mp4"
+				: "assets/videos/banner-vertical-720.mp4",
+			poster: isDesktop
+				? "assets/images/2x/img-bg-banner@2x-80.jpg"
+				: "assets/images/2x/banner-mobile@2x-80.jpg"
+		};
+	}
+
+	function applyHomeVideoSource() {
+		if (!homeSection || !homeVideoBanner || !homeVideoSource) {
+			return;
+		}
+
+		var config = getHomeVideoConfig();
+		if (currentHomeVideoSrc === config.src) {
+			return;
+		}
+
+		currentHomeVideoSrc = config.src;
+		homeSection.classList.remove("video-ready");
+		homeSection.classList.remove("video-fallback");
+		homeVideoBanner.setAttribute("poster", config.poster);
+		homeVideoSource.src = config.src;
+		homeVideoBanner.load();
+
+		var autoplayPromise = homeVideoBanner.play();
+		if (autoplayPromise && typeof autoplayPromise.catch === "function") {
+			autoplayPromise.catch(function () {
+				homeSection.classList.add("video-fallback");
+			});
+		}
 	}
 
 	function hideMobileMenu() {
@@ -379,13 +480,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		snapScrollTimer = setTimeout(runSubtleSnapScroll, 150);
 	});
 
-	setupAosTargetsAndInit();
 	if (document.querySelector("[data-loader-overlay]")) {
-		document.addEventListener("allterra-loading-hidden", startInitialHeroSequence, {
+		document.addEventListener("allterra-loading-hidden", startEntranceAnimations, {
 			once: true,
 		});
 	} else {
-		startInitialHeroSequence();
+		startEntranceAnimations();
 	}
 	updateActiveMenuLinkOnScroll();
 
@@ -401,6 +501,29 @@ document.addEventListener("DOMContentLoaded", function () {
 				});
 			}
 		});
+	}
+
+	if (homeSection && homeVideoBanner && homeVideoSource) {
+		homeVideoBanner.addEventListener("canplay", function () {
+			homeSection.classList.add("video-ready");
+			homeSection.classList.remove("video-fallback");
+		});
+
+		homeVideoBanner.addEventListener("error", function () {
+			homeSection.classList.remove("video-ready");
+			homeSection.classList.add("video-fallback");
+		});
+
+		applyHomeVideoSource();
+
+		window.addEventListener("resize", function () {
+			clearTimeout(homeVideoResizeTimer);
+			homeVideoResizeTimer = setTimeout(function () {
+				applyHomeVideoSource();
+			}, 150);
+		});
+
+		window.addEventListener("orientationchange", applyHomeVideoSource);
 	}
 
 	if (navbarCollapse) {
