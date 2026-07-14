@@ -236,9 +236,34 @@ bold {
 .home-banner {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
   max-width: 192rem;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media (max-width: 991px) {
+  .landing-page.safari-ios-fix .home-banner {
+    min-height: calc(var(--allterra-ios-vh, 1vh) * 100);
+  }
+
+  .landing-page.safari-ios-fix #home .banner-bg,
+  .landing-page.safari-ios-fix #home .home-video-background,
+  .landing-page.safari-ios-fix #home .banner-conteudo {
+    min-height: calc(var(--allterra-ios-vh, 1vh) * 100);
+  }
+
+  /* Safari iOS: estende apenas fundo/video para dentro da safe area superior. */
+  .landing-page.safari-ios-fix #home .banner-bg,
+  .landing-page.safari-ios-fix #home .home-video-background {
+    top: calc(env(safe-area-inset-top, 0px) * -1);
+    height: calc(100% + env(safe-area-inset-top, 0px));
+  }
+
+  .landing-page.safari-ios-fix #home .banner-bg::before {
+    top: calc(env(safe-area-inset-top, 0px) * -1);
+    height: calc(100% + env(safe-area-inset-top, 0px));
+  }
 }
 
 .banner-bg {
@@ -1104,6 +1129,35 @@ h3 {
     background-image: url("../images/2x/banner-mobile@2x-80.jpg");
     background-size: cover;
     background-position: center top;
+  }
+
+  .landing-page.mobile-top-hack-active #home.home-banner {
+    min-height: calc(115vh + 10rem);
+    min-height: calc(115svh + 10rem);
+  }
+
+  .landing-page.mobile-top-hack-active #home .banner-bg,
+  .landing-page.mobile-top-hack-active #home .home-video-background,
+  .landing-page.mobile-top-hack-active #home .banner-conteudo {
+    min-height: calc(115vh + 10rem);
+    min-height: calc(115svh + 10rem);
+  }
+
+  .landing-page.mobile-top-hack-active .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    transition: transform 0.3s ease;
+  }
+
+  .landing-page.mobile-top-hack-active.navbar-hidden-on-scroll .navbar {
+    transform: translateY(-100%);
+  }
+
+  .landing-page.mobile-top-hack-active.menu-open .navbar {
+    transform: translateY(0);
   }
 
   #abertura-intro {

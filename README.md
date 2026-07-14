@@ -1,336 +1,244 @@
-# HTML Reset Master 2025
+# 🌱 Allterra
 
-Sistema profissional de reset CSS com tipografia responsiva baseada em **REM** e **proporcionalidade pixel-perfect**.
+![Status](https://img.shields.io/badge/Status-Produção-brightgreen?style=for-the-badge)
+![Landing](https://img.shields.io/badge/Landing-Ativa-8c6b5c?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0-blue?style=for-the-badge)
 
-## 🎯 Conceito
+> **Inteligência Regenerativa**  
+> Marca e plataforma institucional da Allterra, conectando agricultura, biociência e o potencial vivo do solo.
 
-Este projeto utiliza uma metodologia única de escalonamento proporcional onde:
+**🌐 Domínio de Produção:** [allterraagro.com.br](https://allterraagro.com.br)
 
-1. **Base REM**: `html { font-size: 62.5%; }` → `1rem = 10px` (em navegador padrão 16px)
-2. **Unidades REM**: Todos os tamanhos (fontes, espaçamentos, larguras) são definidos em `rem`
-3. **Proporcionalidade Automática**: O arquivo `responsive.css` ajusta o `font-size` do `html` a cada 20px de largura de tela
-4. **Reset Mobile**: Em `767px` o sistema "reseta" para `10px` e recomeça a escala proporcional específica para mobile
+---
 
-### Por que isso funciona?
+## 📖 Sobre o Projeto
 
-```
-Desktop 1920px:  html = 62.5% (10px)  →  h1: 4.8rem = 48px
-Desktop 1280px:  html = 6.67px        →  h1: 4.8rem = 32px  (proporcional!)
-Mobile 767px:    html = 10px (reset)  →  h1: 3.2rem = 32px  (novo layout)
-Mobile 375px:    html = 4.89px        →  h1: 3.2rem = 15.6px (proporcional!)
-```
+Este repositório contém o site institucional da **Allterra**, com uma página de abertura em [index.html](index.html) e a landing principal em [landing.html](landing.html).
 
-Resultado: **O layout mantém exatamente as mesmas proporções visuais** independente do tamanho da tela!
+O projeto foi estruturado em HTML, CSS e JavaScript, com foco em:
+
+- apresentação da nova marca;
+- narrativa institucional da Allterra;
+- banner com vídeo responsivo;
+- experiência refinada em mobile, incluindo ajustes específicos para Safari iOS.
+
+### 🎯 Objetivos
+
+- **Apresentar** a nova expressão de marca da Allterra
+- **Comunicar** propósito, princípios e proposta institucional
+- **Entregar** uma landing visualmente sólida em desktop e mobile
+- **Garantir** consistência de navegação, loading e vídeo banner responsivo
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **HTML5** - Estrutura semântica das páginas
+- **CSS3** - Estilização customizada
+- **Bootstrap 5.3** - Grid e componentes base
+- **AOS** - Animações de entrada e scroll
+- **JavaScript** - Navegação, vídeo, FAQ, loading e ajustes mobile
+- **PHP legado** - Utilitários auxiliares em [app/](app/)
 
 ---
 
 ## 📁 Estrutura do Projeto
 
-```
-HTML Reset Master 2025/
+```text
+allterra/
+├── app/
+│   ├── funcoes.php
+│   ├── paginacao.php
+│   ├── sessao.php
+│   ├── teste-mail.php
+│   ├── timthumb.php
+│   └── PHPMailer_v5.1/
 ├── assets/
 │   ├── css/
-│   │   ├── custom.css       ← SEU CSS (edite aqui)
-│   │   ├── responsive.css   ← Escala automática (não mexer)
-│   │   ├── bootstrap.min.css
-│   │   └── ...
+│   │   ├── custom.css
+│   │   ├── responsive.css
+│   │   └── loading-teste.css
 │   ├── js/
-│   └── images/
-├── index.html               ← Página de exemplos
-├── bstv5.html              ← Template base antigo
-└── README.md               ← Este arquivo
+│   │   ├── main.js
+│   │   └── loading-teste.js
+│   ├── images/
+│   ├── videos/
+│   └── lib/
+├── index.html
+├── landing.html
+├── README.md
+├── LICENSE
+└── COPILOT.md
 ```
 
 ---
 
-## 🚀 Como Usar em Novos Projetos
+## 🎬 Páginas Principais
 
-### 1. Clone ou copie este diretório
+### 🏠 index.html
+- página de abertura do projeto;
+- apresenta a entrada para a nova marca;
+- funciona como porta de entrada alternativa para o site.
+
+### 🎥 landing.html
+- landing institucional principal;
+- hero com vídeo responsivo para desktop e mobile;
+- fallback para imagem estática;
+- FAQ com accordion;
+- ajustes específicos para Safari iOS;
+- loading inicial com transição controlada.
+
+**Acesso local:**
+- `http://localhost/allterra/`
+- `http://localhost/allterra/landing.html`
+
+---
+
+## 💻 Como Executar Localmente
+
+### Pré-requisitos
+
+- navegador moderno;
+- servidor local opcional, recomendado para ambiente completo:
+  - WAMP
+  - XAMPP
+  - Live Server
+  - `python -m http.server 8000`
+
+### Instalação
+
+1. Clone o repositório:
+
 ```bash
-git clone [seu-repo] nome-do-projeto
-cd nome-do-projeto
+git clone https://github.com/seu-usuario/allterra.git
 ```
 
-### 2. Customize as Variáveis CSS
+2. Coloque o projeto no servidor local:
 
-Edite `assets/css/custom.css`:
-
-```css
-:root {
-  /* Personalize as cores do projeto */
-  --cor-primaria: #007bff;
-  --cor-secundaria: #6c757d;
-  --cor-destaque: #ffc107;
-  
-  /* Personalize as fontes */
-  --font-principal: 'Sua Fonte', sans-serif;
-  --font-destaque: 'Fonte Destaque', serif;
-}
+```text
+C:\wamp64\www\allterra
 ```
 
-### 3. Ajuste a Tipografia (se necessário)
+3. Acesse no navegador:
 
-Os tamanhos padrão são equilibrados para web:
-- `body: 1.6rem` (16px)
-- `h1: 4.8rem` (48px)
-- `h2: 3.6rem` (36px)
-
-**Mantenha sempre em REM!** A proporcionalidade é automática.
-
-### 4. NÃO modifique `responsive.css`
-
-Este arquivo contém 80 media queries que garantem a proporcionalidade. Só altere se souber exatamente o que está fazendo.
-
----
-
-## 🤖 Guia para GitHub Copilot / IA
-
-> **Importante**: Se você é uma IA assistente trabalhando neste projeto, siga estas diretrizes:
-
-### ✅ SEMPRE FAÇA:
-
-1. **Use unidades REM** para todos os tamanhos:
-   ```css
-   /* ✅ CORRETO */
-   .elemento {
-     font-size: 1.8rem;
-     padding: 2.4rem;
-     margin-bottom: 3.2rem;
-     width: 50rem;
-   }
-   
-   /* ❌ ERRADO */
-   .elemento {
-     font-size: 18px;
-     padding: 24px;
-     margin-bottom: 32px;
-     width: 500px;
-   }
-   ```
-
-2. **Mantenha a proporcionalidade**: Use múltiplos de 0.8rem ou 1.6rem
-   - Pequeno: `0.8rem, 1.2rem, 1.6rem`
-   - Médio: `2.4rem, 3.2rem, 4.0rem`
-   - Grande: `4.8rem, 6.4rem, 8.0rem`
-
-3. **Adicione estilos no `custom.css`**: Nunca crie novos arquivos CSS sem necessidade
-
-4. **Respeite os breakpoints Bootstrap**:
-   ```css
-   /* Desktop first */
-   .elemento { ... }
-   
-   /* Large devices (< 1200px) */
-   @media (max-width: 1199.98px) { ... }
-   
-   /* Medium devices (< 992px) */
-   @media (max-width: 991.98px) { ... }
-   
-   /* Mobile (< 768px) */
-   @media (max-width: 767.98px) { ... }
-   
-   /* Extra small (< 576px) */
-   @media (max-width: 575.98px) { ... }
-   ```
-
-5. **Ajuste mobile quando necessário**: Elementos podem ter tamanhos diferentes em mobile, mas sempre em REM
-
-### ❌ NUNCA FAÇA:
-
-1. **Não use `px`** (exceto para `border`, `box-shadow` ou casos muito específicos)
-2. **Não modifique `responsive.css`**
-3. **Não crie CSS inline** sem justificativa
-4. **Não ignore media queries** - sempre teste proporcionalidade
-
-### 💡 Exemplos de Implementação
-
-**Criando um Card Proporcional:**
-```css
-.card {
-  padding: 3.2rem;
-  border-radius: 0.8rem;
-  margin-bottom: 2.4rem;
-}
-
-.card-title {
-  font-size: 2.4rem;
-  margin-bottom: 1.6rem;
-}
-
-.card-text {
-  font-size: 1.6rem;
-  line-height: 1.6;
-}
-
-/* Mobile */
-@media (max-width: 767.98px) {
-  .card {
-    padding: 2.4rem;
-  }
-  
-  .card-title {
-    font-size: 2.0rem;
-  }
-}
-```
-
-**Botão Customizado:**
-```css
-.btn-custom {
-  padding: 1.6rem 3.2rem;
-  font-size: 1.8rem;
-  border-radius: 0.4rem;
-}
-
-@media (max-width: 767.98px) {
-  .btn-custom {
-    padding: 1.2rem 2.4rem;
-    font-size: 1.6rem;
-    width: 100%; /* Botões mobile full-width */
-  }
-}
+```text
+http://localhost/allterra/
+http://localhost/allterra/landing.html
 ```
 
 ---
 
-## 📊 Referência Rápida
+## 🎨 Sistema Visual
 
-### Escala de Tamanhos (REM)
-| Descrição | Desktop | Mobile |
-|-----------|---------|--------|
-| Texto tiny | 1.2rem | 1.2rem |
-| Texto small | 1.4rem | 1.4rem |
-| Texto base | 1.6rem | 1.6rem |
-| Texto lead | 2.0rem | 1.8rem |
-| H6 | 1.8rem | 1.6rem |
-| H5 | 2.0rem | 1.8rem |
-| H4 | 2.4rem | 2.0rem |
-| H3 | 2.8rem | 2.2rem |
-| H2 | 3.6rem | 2.6rem |
-| H1 | 4.8rem | 3.2rem |
-| Display | 6.4rem | 3.6rem |
+### Tipografia
+- fontes customizadas definidas em [assets/fontes/](assets/fontes/);
+- escalonamento com base em `rem`;
+- responsividade refinada em [assets/css/responsive.css](assets/css/responsive.css).
 
-### Espaçamentos Padrão
-```css
-.mb-1 { margin-bottom: 0.8rem; }
-.mb-2 { margin-bottom: 1.6rem; }
-.mb-3 { margin-bottom: 2.4rem; }
-.mb-4 { margin-bottom: 3.2rem; }
-.mb-5 { margin-bottom: 4.8rem; }
-```
+### Paleta
+- base terrosa e institucional;
+- tons de marrom, bege e cinza ligados à identidade Allterra;
+- aplicação centralizada em variáveis CSS no topo de [assets/css/custom.css](assets/css/custom.css).
 
-### Breakpoints
-```css
-1920px+ : Desktop Full (base)
-767px   : Mobile (reset - recalcula proporcionalidade)
-576px   : Mobile pequeno (ajustes finos)
-```
+### Responsividade
+- abordagem desktop-first;
+- refinamentos específicos até o breakpoint mobile;
+- ajustes dedicados para hero, navbar e ritmo vertical no mobile.
 
 ---
 
-## 🎨 Customização por Projeto
+## 🔧 Funcionalidades
 
-### Adicionando Fontes Customizadas
-
-1. Adicione o import no início do `custom.css`:
-```css
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-```
-
-2. Atualize as variáveis:
-```css
-:root {
-  --font-principal: 'Poppins', sans-serif;
-}
-```
-
-### Adicionando Cores do Projeto
-
-```css
-:root {
-  --cor-primaria: #FF6B35;
-  --cor-secundaria: #004E89;
-  --cor-destaque: #F7C948;
-}
-
-/* Use classes utilitárias */
-.text-primary { color: var(--cor-primaria); }
-.bg-primary { background-color: var(--cor-primaria); }
-```
+- ✅ Hero com vídeo responsivo em [landing.html](landing.html)
+- ✅ Fallback para imagem estática quando o vídeo não carrega
+- ✅ Loading overlay com transição controlada
+- ✅ Sequência de entrada da hero e animações AOS
+- ✅ Navegação por âncoras com snap suave nas seções marcadas
+- ✅ FAQ expansível
+- ✅ Open Graph, Twitter Cards e favicons configurados
+- ✅ Ajustes específicos para Safari iOS no mobile
+- ✅ Compatibilidade entre desktop e mobile com vídeo horizontal/vertical
 
 ---
 
-## 🧪 Testando a Proporcionalidade
+## 🔧 Otimizações Técnicas
 
-1. Abra `index.html` no navegador
-2. Abra o DevTools (F12)
-3. Redimensione a janela lentamente
-4. **Observe**: Todos os elementos mantêm a mesma proporção visual
-5. Em `767px` o layout "se ajusta" para mobile
+### Banner em Vídeo
+- troca automática do vídeo conforme viewport;
+- desktop com vídeo horizontal;
+- mobile com vídeo vertical;
+- `poster` como fallback visual imediato.
 
----
+### Safari iOS Fix
+- `viewport-fit=cover`;
+- cálculo dinâmico de viewport;
+- micro-ajuste inicial para estabilidade visual do hero;
+- controle da navbar no topo durante o primeiro bloco da landing.
 
-## 📝 Boas Práticas
-
-✅ **Faça**: Componentes reutilizáveis com classes semânticas  
-✅ **Faça**: Mobile-first para novos componentes (depois ajustar desktop)  
-✅ **Faça**: Comente seções longas do CSS  
-✅ **Faça**: Use as variáveis CSS do `:root`  
-
-❌ **Evite**: `!important` (quase sempre desnecessário)  
-❌ **Evite**: CSS duplicado em múltiplos arquivos  
-❌ **Evite**: Unidades `px` para dimensões principais  
-❌ **Evite**: Media queries aleatórios (use os padronizados)  
+### Loading e Entrada
+- overlay inicial com fade-out controlado;
+- disparo de animações somente após a ocultação do loading;
+- comportamento refinado para evitar conflito visual no mobile.
 
 ---
 
-## 🔧 Compatibilidade
+## 📱 Compatibilidade
 
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
+**Dispositivos**
+- 📱 Mobile
+- 📱 Tablet
+- 💻 Desktop
 
----
-
-## 📚 Recursos Adicionais
-
-- Bootstrap 5 Docs: https://getbootstrap.com/docs/5.3/
-- REM vs PX: https://www.w3schools.com/cssref/css_units.asp
-- Responsive Design: https://web.dev/responsive-web-design-basics/
+**Navegadores**
+- ✅ Chrome
+- ✅ Safari
+- ✅ Firefox
+- ✅ Edge
 
 ---
 
-## 🤝 Contribuindo
+## 🌐 SEO e Metadados
 
-Se você melhorou este sistema, considere:
-1. Documentar a mudança neste README
-2. Testar em múltiplos dispositivos
-3. Manter a compatibilidade com projetos existentes
+- meta description configurada;
+- Open Graph configurado;
+- Twitter Cards configurados;
+- favicon e manifest incluídos;
+- canonical específico para [index.html](index.html) e [landing.html](landing.html).
+
+---
+
+## 🚀 Produção
+
+### Checklist de publicação
+
+- [x] Landing institucional publicada
+- [x] Meta tags e social cards configurados
+- [x] Vídeo banner com fallback
+- [x] Ajustes de Safari iOS aplicados
+- [x] Responsividade validada em mobile e desktop
+- [ ] Revisão final de links externos e conteúdos institucionais
+- [ ] Rotina de deploy/documentação operacional do ambiente
+
+### Arquivos prioritários em produção
+
+- [landing.html](landing.html) - landing principal
+- [index.html](index.html) - página de entrada
+- [assets/css/custom.css](assets/css/custom.css) - estilos principais
+- [assets/css/responsive.css](assets/css/responsive.css) - responsividade
+- [assets/css/loading-teste.css](assets/css/loading-teste.css) - loading overlay
+- [assets/js/main.js](assets/js/main.js) - interações gerais
+- [assets/js/loading-teste.js](assets/js/loading-teste.js) - fluxo de loading e ajustes mobile
+
+---
+
+## 📝 Observações de Manutenção
+
+- o comportamento principal da landing está concentrado em [assets/js/main.js](assets/js/main.js) e [assets/js/loading-teste.js](assets/js/loading-teste.js);
+- o hero e os ajustes mobile críticos estão em [assets/css/custom.css](assets/css/custom.css);
+- a página institucional principal do projeto é [landing.html](landing.html).
 
 ---
 
 ## 📄 Licença
 
-Livre para uso em projetos pessoais e comerciais.
-
----
-
-## 💡 Dúvidas Frequentes
-
-**P: Posso usar `px` para borders?**  
-R: Sim! `border: 1px solid` é aceitável pois não deve escalar.
-
-**P: E se eu precisar de um tamanho exato em pixels?**  
-R: Calcule: `tamanho_desejado_px / 10 = valor_rem`. Exemplo: 25px → 2.5rem
-
-**P: Por que resetar em 767px?**  
-R: Mobile precisa de layout diferente (stacking, botões maiores, etc). O reset permite criar proporções específicas para pequenas telas.
-
-**P: Posso alterar o intervalo de 20px no responsive.css?**  
-R: Sim, mas 20px é o equilíbrio ideal entre suavidade e performance.
-
----
-
-**Desenvolvido com ❤️ para projetos web pixel-perfect**
+Este projeto segue a licença definida em [LICENSE](LICENSE).

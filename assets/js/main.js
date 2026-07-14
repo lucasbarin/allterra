@@ -21,8 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
 	var autoScrollInProgress = false;
 	var snapScrollTimer = null;
 	var scrollEndUnlockTimer = null;
+	var mobileTopNavbarHideThreshold = 100;
 	var openingSequenceStarted = false;
 	var entranceAnimationsStarted = false;
+	var entranceAnimationLock = false;
 
 	function getHashFromLink(link) {
 		if (!link) {
@@ -115,20 +117,19 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	function runSubtleSnapScroll() {
+		if (entranceAnimationLock) {
+			return;
+		}
+
+		if (isMobileTopHackActive() && homeSection && window.scrollY < homeSection.offsetHeight - 10) {
+			return;
+		}
+
 		if (autoScrollInProgress) {
 			return;
 		}
 
-		var targets = menuLinks
-			.map(function (menuLink) {
-				return getElementByHash(getHashFromLink(menuLink));
-			})
-			.filter(Boolean);
-
-		var principiosSection = document.querySelector("#principios");
-		if (principiosSection && targets.indexOf(principiosSection) === -1) {
-			targets.push(principiosSection);
-		}
+		var targets = Array.prototype.slice.call(document.querySelectorAll("[data-snap-target]")).filter(Boolean);
 
 		if (!targets.length) {
 			return;
@@ -333,10 +334,23 @@ document.addEventListener("DOMContentLoaded", function () {
 			return;
 		}
 
+		entranceAnimationLock = true;
+
+		if (document.body.classList.contains("safari-ios-fix") && !document.body.classList.contains("mobile-top-hack-active")) {
+			window.scrollTo(0, 2);
+			setTimeout(function () {
+				window.scrollTo(0, 2);
+			}, 120);
+		}
+
 		entranceAnimationsStarted = true;
 		setupAosTargetsAndInit();
 		runIndexOpeningSequence();
 		startInitialHeroSequence();
+
+		setTimeout(function () {
+			entranceAnimationLock = false;
+		}, 1000);
 	}
 
 	function isMobileMenuViewport() {
@@ -345,6 +359,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	function setMenuOpenState(isOpen) {
 		document.body.classList.toggle("menu-open", isOpen);
+		updateMobileTopNavbarState();
+	}
+
+	function isMobileTopHackActive() {
+		return document.body.classList.contains("mobile-top-hack-active") &&
+			window.matchMedia("(max-width: 767px)").matches;
+	}
+
+	function updateMobileTopNavbarState() {
+		if (!isMobileTopHackActive()) {
+			document.body.classList.remove("navbar-hidden-on-scroll");
+			return;
+		}
+
+		if (document.body.classList.contains("menu-open")) {
+			document.body.classList.remove("navbar-hidden-on-scroll");
+			return;
+		}
+
+		if (window.scrollY > mobileTopNavbarHideThreshold) {
+			document.body.classList.add("navbar-hidden-on-scroll");
+		} else {
+			document.body.classList.remove("navbar-hidden-on-scroll");
+		}
 	}
 
 	function getHomeVideoConfig() {
@@ -475,19 +513,25 @@ document.addEventListener("DOMContentLoaded", function () {
 	bindSmoothScroll(scrollButtonLink);
 
 	window.addEventListener("scroll", function () {
+		updateMobileTopNavbarState();
 		updateActiveMenuLinkOnScroll();
 		clearTimeout(snapScrollTimer);
 		snapScrollTimer = setTimeout(runSubtleSnapScroll, 150);
 	});
 
+	window.addEventListener("resize", updateMobileTopNavbarState);
+
 	if (document.querySelector("[data-loader-overlay]")) {
-		document.addEventListener("allterra-loading-hidden", startEntranceAnimations, {
+		document.addEventListener("allterra-loading-hidden", function () {
+			startEntranceAnimations();
+		}, {
 			once: true,
 		});
 	} else {
 		startEntranceAnimations();
 	}
 	updateActiveMenuLinkOnScroll();
+	updateMobileTopNavbarState();
 
 	if (videoContainer && playButton && videoPlayer) {
 		playButton.addEventListener("click", function () {
@@ -539,6 +583,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		window.addEventListener("resize", function () {
 			if (isMobileMenuViewport()) {
+				updateMobileTopNavbarState();
 				return;
 			}
 
