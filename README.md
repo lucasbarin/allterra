@@ -38,7 +38,6 @@ O projeto foi estruturado em HTML, CSS e JavaScript, com foco em:
 - **Bootstrap 5.3** - Grid e componentes base
 - **AOS** - Animações de entrada e scroll
 - **JavaScript** - Navegação, vídeo, FAQ, loading e ajustes mobile
-- **PHP legado** - Utilitários auxiliares em [app/](app/)
 
 ---
 
@@ -46,13 +45,6 @@ O projeto foi estruturado em HTML, CSS e JavaScript, com foco em:
 
 ```text
 allterra/
-├── app/
-│   ├── funcoes.php
-│   ├── paginacao.php
-│   ├── sessao.php
-│   ├── teste-mail.php
-│   ├── timthumb.php
-│   └── PHPMailer_v5.1/
 ├── assets/
 │   ├── css/
 │   │   ├── custom.css

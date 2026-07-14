@@ -32,18 +32,11 @@ node_modules/
 package-lock.json
 yarn.lock
 
-# Cache
-app/cache/*
-!app/cache/.gitkeep
-app/temp/*
-!app/temp/.gitkeep
-
 # Uploads/Imagens temporárias
 uploads/
 assets/images/temp/
 
 # Arquivos PHP sensíveis
-app/conexao.php
 config.php
 .env
 
