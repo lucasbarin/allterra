@@ -13,7 +13,7 @@
 
 ## 📖 Sobre o Projeto
 
-Este repositório contém o site institucional da **Allterra**, com uma página de abertura em [index.html](index.html) e a landing principal em [landing.html](landing.html).
+Este repositório contém o site institucional da **Allterra**, centralizado em [index.html](index.html).
 
 O projeto foi estruturado em HTML, CSS e JavaScript, com foco em:
 
@@ -57,22 +57,16 @@ allterra/
 │   ├── videos/
 │   └── lib/
 ├── index.html
-├── landing.html
 ├── README.md
 ├── LICENSE
-└── COPILOT.md
+└── GUIA-PUBLICACAO-CLIENTE.md
 ```
 
 ---
 
-## 🎬 Páginas Principais
+## 🎬 Página Principal
 
 ### 🏠 index.html
-- página de abertura do projeto;
-- apresenta a entrada para a nova marca;
-- funciona como porta de entrada alternativa para o site.
-
-### 🎥 landing.html
 - landing institucional principal;
 - hero com vídeo responsivo para desktop e mobile;
 - fallback para imagem estática;
@@ -82,7 +76,6 @@ allterra/
 
 **Acesso local:**
 - `http://localhost/allterra/`
-- `http://localhost/allterra/landing.html`
 
 ---
 
@@ -115,7 +108,6 @@ C:\wamp64\www\allterra
 
 ```text
 http://localhost/allterra/
-http://localhost/allterra/landing.html
 ```
 
 ---
@@ -141,7 +133,7 @@ http://localhost/allterra/landing.html
 
 ## 🔧 Funcionalidades
 
-- ✅ Hero com vídeo responsivo em [landing.html](landing.html)
+- ✅ Hero com vídeo responsivo em [index.html](index.html)
 - ✅ Fallback para imagem estática quando o vídeo não carrega
 - ✅ Loading overlay com transição controlada
 - ✅ Sequência de entrada da hero e animações AOS
@@ -195,11 +187,13 @@ http://localhost/allterra/landing.html
 - Open Graph configurado;
 - Twitter Cards configurados;
 - favicon e manifest incluídos;
-- canonical específico para [index.html](index.html) e [landing.html](landing.html).
+- canonical configurado para [index.html](index.html).
 
 ---
 
 ## 🚀 Produção
+
+Guia de publicação para envio ao cliente: [GUIA-PUBLICACAO-CLIENTE.md](GUIA-PUBLICACAO-CLIENTE.md)
 
 ### Checklist de publicação
 
@@ -213,8 +207,7 @@ http://localhost/allterra/landing.html
 
 ### Arquivos prioritários em produção
 
-- [landing.html](landing.html) - landing principal
-- [index.html](index.html) - página de entrada
+- [index.html](index.html) - landing principal
 - [assets/css/custom.css](assets/css/custom.css) - estilos principais
 - [assets/css/responsive.css](assets/css/responsive.css) - responsividade
 - [assets/css/loading-teste.css](assets/css/loading-teste.css) - loading overlay
@@ -227,7 +220,7 @@ http://localhost/allterra/landing.html
 
 - o comportamento principal da landing está concentrado em [assets/js/main.js](assets/js/main.js) e [assets/js/loading-teste.js](assets/js/loading-teste.js);
 - o hero e os ajustes mobile críticos estão em [assets/css/custom.css](assets/css/custom.css);
-- a página institucional principal do projeto é [landing.html](landing.html).
+- a página institucional principal do projeto é [index.html](index.html).
 
 ---
 
